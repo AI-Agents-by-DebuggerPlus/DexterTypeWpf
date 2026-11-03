@@ -9,7 +9,8 @@ namespace DexterType;
 
 public partial class MainWindow : Window
 {
-    static readonly string[] Strong = { "#E0405A", "#E67E22", "#D4A017", "#2EAA5E", "#18A5B8", "#3B6DF0", "#7E57C2", "#C2409E" };
+    static Color C(string key) => (Color)Application.Current.Resources[key];
+
     static Brush B(string s) => (Brush)new BrushConverter().ConvertFromString(s)!;
 
     readonly TrainerEngine _e = new();
@@ -17,10 +18,17 @@ public partial class MainWindow : Window
     readonly Dictionary<char, Border> _keys = new();
     readonly List<HistoryEntry> _history = HistoryStore.Load();
     Border? _next;
+    public readonly MediaPlayer _musicPlayer = new();
+
+    public Layout CurrentLayout => (Layout)LayoutBox.SelectedItem;
 
     public MainWindow()
     {
         InitializeComponent();
+        try { 
+            IconGenerator.Generate("icon.png");
+            this.Icon = new System.Windows.Media.Imaging.BitmapImage(new Uri(System.IO.Path.GetFullPath("icon.png")));
+        } catch {}
         LayoutBox.ItemsSource = Layouts.All;
         LayoutBox.DisplayMemberPath = "Name";
         LayoutBox.SelectionChanged += (_, _) => OnLayout();
@@ -28,6 +36,11 @@ public partial class MainWindow : Window
         _timer.Tick += (_, _) => UpdateStats();
         LayoutBox.SelectedIndex = 0;
         ShowHistory();
+        this.Loaded += (s, e) => UpdateTextPosition();
+        
+        // Load music preference
+        string musicPath = System.IO.File.Exists("music.txt") ? System.IO.File.ReadAllText("music.txt") : "";
+        if (!string.IsNullOrEmpty(musicPath)) PlayMusic(musicPath);
     }
 
     void OnLayout()
@@ -49,6 +62,12 @@ public partial class MainWindow : Window
 
     void OnRestart(object s, RoutedEventArgs e) => Restart();
 
+    void OnSettings(object s, RoutedEventArgs e)
+    {
+        var settings = new SettingsWindow { Owner = this };
+        settings.ShowDialog();
+    }
+
     void OnKey(object s, KeyEventArgs e)
     {
         if (e.Key == Key.Escape || (e.Key == Key.Enter && _e.Done)) { Restart(); e.Handled = true; }
@@ -66,9 +85,9 @@ public partial class MainWindow : Window
 
     async void Flash()
     {
-        TextBorder.BorderBrush = Brushes.IndianRed;
+        TextBorder.Background = B("#FFEBEE");
         await Task.Delay(140);
-        TextBorder.BorderBrush = B("#DDE1E8");
+        TextBorder.Background = Brushes.White;
     }
 
     void Finish()
@@ -83,18 +102,46 @@ public partial class MainWindow : Window
 
     void Render()
     {
+        if (TextView == null || TextCanvas == null) return;
+        
         TextView.Inlines.Clear();
         for (int i = 0; i < _e.Text.Length; i++)
         {
-            var ch = _e.Text[i] == ' ' ? '·' : _e.Text[i];
+            var ch = _e.Text[i] == ' ' ? ' ' : _e.Text[i];
             var run = new Run(ch.ToString())
             {
-                Foreground = i < _e.Pos ? Brushes.SeaGreen : i == _e.Pos ? Brushes.White : Brushes.Gray
+                Foreground = i < _e.Pos ? B("#2ECC71") : i == _e.Pos ? Brushes.Black : B("#BBB")
             };
-            if (i == _e.Pos) run.Background = B("#3B6DF0");
+            if (i == _e.Pos) 
+            {
+                run.Background = B("#FFF176");
+                run.FontWeight = FontWeights.Bold;
+            }
             TextView.Inlines.Add(run);
         }
         Highlight();
+        
+        UpdateTextPosition();
+    }
+
+    private void UpdateTextPosition()
+    {
+        if (TextCanvas == null || TextCanvas.ActualWidth <= 0) return;
+        double charWidth = 19.8; 
+        double center = TextCanvas.ActualWidth / 2;
+        TextTransform.X = center - (_e.Pos * charWidth) - (charWidth / 2);
+    }
+
+    public void PlayMusic(string? path)
+    {
+        _musicPlayer.Stop();
+        if (string.IsNullOrEmpty(path)) return;
+        try {
+            _musicPlayer.Open(new Uri(path));
+            _musicPlayer.MediaEnded += (s, e) => { _musicPlayer.Position = TimeSpan.Zero; _musicPlayer.Play(); };
+            _musicPlayer.Play();
+            System.IO.File.WriteAllText("music.txt", path);
+        } catch {}
     }
 
     void Highlight()
@@ -112,23 +159,46 @@ public partial class MainWindow : Window
     static void Paint(Border b, bool on)
     {
         int f = (int)b.Tag;
-        b.Background = B(on ? (f < 0 ? "#808080" : Strong[f]) : (f < 0 ? "#14808080" : "#2B" + Strong[f][1..]));
-        ((TextBlock)b.Child).Foreground = on ? Brushes.White : Brushes.Black;
+        Color baseColor = f < 0 ? C("ColorThumb") : f switch {
+            0 or 7 => C("ColorPinky"),
+            1 or 6 => C("ColorRing"),
+            2 or 5 => C("ColorMiddle"),
+            3 or 4 => C("ColorIndex"),
+            _ => C("ColorThumb")
+        };
+        
+        if (on) {
+            b.Background = new SolidColorBrush(baseColor);
+            b.BorderBrush = B("#2C3E50");
+            b.BorderThickness = new Thickness(2);
+        } else {
+            b.Background = new SolidColorBrush(Color.FromArgb(64, baseColor.R, baseColor.G, baseColor.B)); 
+            b.BorderBrush = Brushes.Transparent;
+            b.BorderThickness = new Thickness(0);
+        }
+        ((TextBlock)b.Child).Foreground = (Brush)Application.Current.Resources["ThemeMainText"];
     }
 
-    void BuildKeyboard(Layout l)
+    public void BuildKeyboard(Layout l)
     {
         Kb.Children.Clear(); _keys.Clear();
-        double[] offset = { 0, 22, 50 };
+        double[] offset = { 0, 25, 60 };
         for (int r = 0; r < l.Rows.Length; r++)
         {
-            var row = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(offset[r], 0, 0, 4) };
+            var row = new StackPanel { Orientation = Orientation.Horizontal, 
+                                     HorizontalAlignment = HorizontalAlignment.Center,
+                                     Margin = new Thickness(offset[r], 0, 0, 8) };
             for (int i = 0; i < l.Rows[r].Length; i++)
-                row.Children.Add(MakeKey(char.ToUpper(l.Rows[r][i]).ToString(), l.Rows[r][i], Layouts.Fingers[i], 44));
+            {
+                int finger = Layouts.Fingers[i];
+                row.Children.Add(MakeKey(char.ToUpper(l.Rows[r][i]).ToString(), l.Rows[r][i], finger, 50));
+            }
             Kb.Children.Add(row);
         }
-        var space = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(100, 0, 0, 0) };
-        space.Children.Add(MakeKey("пробел", ' ', -1, 260));
+        var space = new StackPanel { Orientation = Orientation.Horizontal, 
+                                   HorizontalAlignment = HorizontalAlignment.Center,
+                                   Margin = new Thickness(0, 8, 0, 0) };
+        space.Children.Add(MakeKey("", ' ', -1, 300));
         Kb.Children.Add(space);
     }
 
@@ -136,9 +206,10 @@ public partial class MainWindow : Window
     {
         var b = new Border
         {
-            Width = width, Height = 44, Margin = new Thickness(0, 0, 4, 0), Tag = finger,
-            CornerRadius = new CornerRadius(8), BorderThickness = new Thickness(1), BorderBrush = B("#DDE1E8"),
+            Width = width, Height = 50, Margin = new Thickness(4), Tag = finger,
+            CornerRadius = new CornerRadius(12),
             Child = new TextBlock { Text = label, FontWeight = FontWeights.SemiBold,
+                FontSize = 18,
                 HorizontalAlignment = HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center }
         };
         Paint(b, false);

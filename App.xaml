@@ -1,4 +1,18 @@
 <Application x:Class="DexterType.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml" />
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="ThemeBackground" Color="#F8F9FB"/>
+            <SolidColorBrush x:Key="ThemeTextPanel" Color="White"/>
+            <SolidColorBrush x:Key="ThemeMainText" Color="#2C3E50"/>
+            
+            <Color x:Key="ColorPinky">#B5A2D8</Color>
+            <Color x:Key="ColorRing">#A5D6A7</Color>
+            <Color x:Key="ColorMiddle">#F48FB1</Color>
+            <Color x:Key="ColorIndex">#80DEEA</Color>
+            <Color x:Key="ColorThumb">#FFE082</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
