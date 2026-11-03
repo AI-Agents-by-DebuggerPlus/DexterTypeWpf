@@ -40,7 +40,8 @@ public partial class MainWindow : Window
         
         // Load music preference
         string musicPath = System.IO.File.Exists("music.txt") ? System.IO.File.ReadAllText("music.txt") : "";
-        if (!string.IsNullOrEmpty(musicPath)) PlayMusic(musicPath);
+        bool musicOn = System.IO.File.Exists("music_on.txt") ? System.IO.File.ReadAllText("music_on.txt") == "1" : true;
+        if (!string.IsNullOrEmpty(musicPath) && musicOn) PlayMusic(musicPath);
     }
 
     void OnLayout()

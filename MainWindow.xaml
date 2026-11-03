@@ -14,12 +14,14 @@
     </Window.Resources>
     <Grid Background="{DynamicResource ThemeBackground}" Margin="0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="120"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/> <!-- 1: Stats & Controls (Moved Up) -->
+            <RowDefinition Height="120"/>  <!-- 2: Typing Area -->
+            <RowDefinition Height="*"/>     <!-- 3: Keyboard -->
+            <RowDefinition Height="Auto"/> <!-- 4: Hints (Moved Down) -->
         </Grid.RowDefinitions>
         
-        <Border x:Name="TextBorder" Grid.Row="0" Background="{DynamicResource ThemeTextPanel}" BorderBrush="#EEE" BorderThickness="0,0,0,2">
+        <!-- Typing Area (Now Row 1) -->
+        <Border x:Name="TextBorder" Grid.Row="1" Background="{DynamicResource ThemeTextPanel}" BorderBrush="#EEE" BorderThickness="0,0,0,2">
             <Canvas x:Name="TextCanvas" ClipToBounds="True" VerticalAlignment="Center" Height="70">
                 <TextBlock x:Name="TextView" FontFamily="Consolas" FontSize="36" Canvas.Top="10"
                            HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -31,7 +33,8 @@
             </Canvas>
         </Border>
 
-        <StackPanel Grid.Row="1" Margin="20,15">
+        <!-- Stats & Controls (Now Row 0) -->
+        <StackPanel Grid.Row="0" Margin="20,10">
             <DockPanel LastChildFill="False">
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
                     <Border Style="{StaticResource StatCard}">
@@ -59,13 +62,18 @@
                             Background="#E8F5E9" BorderThickness="0"/>
                 </StackPanel>
             </DockPanel>
-            <TextBlock x:Name="Hint" Margin="0,10,0,0" HorizontalAlignment="Center" 
-                       FontSize="16" FontWeight="SemiBold" Foreground="#2C3E50"/>
             <ListBox x:Name="HistoryList" Visibility="Collapsed"/>
         </StackPanel>
 
-        <Grid x:Name="KbArea" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,40">
+        <!-- Keyboard Area (Row 2) -->
+        <Grid x:Name="KbArea" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,10">
             <StackPanel x:Name="Kb" Opacity="0.9"/>
         </Grid>
+
+        <!-- Hints Area (Now Row 3 - Below Keyboard) -->
+        <Border Grid.Row="3" Background="#F0F2F5" Padding="10" Margin="0,0,0,0">
+            <TextBlock x:Name="Hint" HorizontalAlignment="Center" 
+                       FontSize="16" FontWeight="SemiBold" Foreground="#2C3E50"/>
+        </Border>
     </Grid>
 </Window>

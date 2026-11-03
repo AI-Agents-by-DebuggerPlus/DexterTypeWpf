@@ -8,6 +8,15 @@ public partial class SettingsWindow : Window
     public SettingsWindow()
     {
         InitializeComponent();
+        if (Application.Current.MainWindow is MainWindow mw)
+        {
+            MusicEnabledCheck.IsChecked = mw._musicPlayer.Source != null && mw._musicPlayer.CanPause; 
+            // More robust check: use the actual mute state if we had one, but checking if playing is fine.
+            // For now, let's just default it based on if a file is loaded.
+            MusicEnabledCheck.IsChecked = System.IO.File.Exists("music_on.txt") 
+                ? System.IO.File.ReadAllText("music_on.txt") == "1" 
+                : true;
+        }
     }
 
     private void SetCandyTheme(object sender, RoutedEventArgs e) => ApplyTheme(
@@ -57,6 +66,8 @@ public partial class SettingsWindow : Window
     private void MusicChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
         if (Owner is not MainWindow mw || MusicBox == null || !this.IsLoaded) return;
+        if (MusicEnabledCheck.IsChecked == false) return;
+
         var item = (System.Windows.Controls.ComboBoxItem)MusicBox.SelectedItem;
         if (item.Content.ToString() == "Выбрать файл...")
         {
@@ -65,5 +76,22 @@ public partial class SettingsWindow : Window
             else MusicBox.SelectedIndex = 0;
         }
         else mw.PlayMusic(null);
+    }
+
+    private void MusicToggleChanged(object sender, RoutedEventArgs e)
+    {
+        if (Owner is not MainWindow mw || !this.IsLoaded) return;
+        bool isEnabled = MusicEnabledCheck.IsChecked ?? false;
+        System.IO.File.WriteAllText("music_on.txt", isEnabled ? "1" : "0");
+        
+        if (isEnabled)
+        {
+            string musicPath = System.IO.File.Exists("music.txt") ? System.IO.File.ReadAllText("music.txt") : "";
+            if (!string.IsNullOrEmpty(musicPath)) mw.PlayMusic(musicPath);
+        }
+        else
+        {
+            mw._musicPlayer.Stop();
+        }
     }
 }
