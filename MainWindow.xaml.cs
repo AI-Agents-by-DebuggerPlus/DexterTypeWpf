@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -25,6 +26,12 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+
+        // Версия сборки в заголовке окна (штамп ставит MSBuild, см. DexterType.csproj)
+        var asm = System.Reflection.Assembly.GetExecutingAssembly();
+        var ver = asm.GetCustomAttribute<System.Reflection.AssemblyInformationalVersionAttribute>()?.InformationalVersion
+                  ?? asm.GetName().Version?.ToString() ?? "?";
+        Title = $"DexterType — сборка {ver}";
         try { 
             IconGenerator.Generate("icon.png");
             this.Icon = new System.Windows.Media.Imaging.BitmapImage(new Uri(System.IO.Path.GetFullPath("icon.png")));
@@ -48,7 +55,7 @@ public partial class MainWindow : Window
     {
         var l = (Layout)LayoutBox.SelectedItem;
         BuildKeyboard(l);
-        LessonBox.ItemsSource = l.Groups.Select((g, i) => $"Урок {i + 1}: {g}").Append("Слова").ToList();
+        LessonBox.ItemsSource = l.Groups.Select((g, i) => $"Урок {i + 1}: {l.LessonName(i)}").Append("Слова").ToList();
         LessonBox.SelectedIndex = 0;
     }
 

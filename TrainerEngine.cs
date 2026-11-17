@@ -41,6 +41,10 @@ public sealed class TrainerEngine
 
     string Generate()
     {
+        // Уроки из инструкции «Слепая печать»: фиксированный текст упражнения.
+        if (Current.Exercises is { } ex && Lesson >= 0 && Lesson < ex.Length && ex[Lesson].Length > 0)
+            return ex[Lesson];
+
         var words = new List<string>(); int len = 0;
         if (Lesson >= Current.Groups.Length)
         {
