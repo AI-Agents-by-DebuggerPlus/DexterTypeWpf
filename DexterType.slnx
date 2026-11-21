@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="DexterType.csproj" />
+  <Project Path="Dexter.Core/Dexter.Core.csproj" />
+  <Project Path="DexterType/DexterType.csproj" />
+  <Project Path="tools/SelfCheck/SelfCheck.csproj" />
 </Solution>

@@ -1,0 +1,428 @@
+{
+  "id": "en-basic",
+  "title": "English: базовый курс",
+  "layout": "en",
+  "criteria": {
+    "minCpm": 100,
+    "minAccuracy": 96
+  },
+  "parts": [
+    {
+      "title": "Домашний ряд",
+      "lessons": [
+        {
+          "id": "en-01",
+          "title": "Клавиши A S D F",
+          "newKeys": "ASDF",
+          "intro": "Новые клавиши: A — левый мизинец; S — левый безымянный палец; D — левый средний палец; F — левый указательный палец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "aa aaa aa aaa ss sss ss sss dd ddd dd ddd ff fff ff fff",
+            "as fa af sa fs sf df ds ad da fd sd",
+            "daf saf saa afd ada fad ass dad faa",
+            "ad add ads dad sad as fad dads a",
+            "sad as ad a ads fad dads add",
+            "as as as fa fa fa af af af sa sa sa fs fs fs"
+          ],
+          "minCpm": 60,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-02",
+          "title": "Клавиши J K L",
+          "newKeys": "JKL",
+          "intro": "Новые клавиши: J — правый указательный палец; K — правый средний палец; L — правый безымянный палец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "jj jjj jj jjj kk kkk kk kkk ll lll ll lll",
+            "kd jl dl jd sl ka ld al jk js kj ls fj ak",
+            "sak kaf akf sal alk dak aja lak jad laa",
+            "salad ask lad lads all flask salads asks fall",
+            "fall all flasks flask salads asks lad ask salad",
+            "kd kd kd jl jl jl dl dl dl jd jd jd sl sl sl"
+          ],
+          "minCpm": 60,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-03",
+          "title": "Клавиши G H",
+          "newKeys": "GH",
+          "intro": "Новые клавиши: G — левый указательный палец; H — правый указательный палец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "gg ggg gg ggg hh hhh hh hhh gg ggg gg ggg hh hhh hh hhh",
+            "jh lh dg sh gj fg hd lg kg ag gd hl kh hs",
+            "gah kag gaj fag aha haa gak adg ajh",
+            "hall has flag shall gals half had halls glass",
+            "had glass has halls flag gals half hall sags",
+            "jh jh jh lh lh lh dg dg dg sh sh sh gj gj gj"
+          ],
+          "minCpm": 60,
+          "minAccuracy": 95
+        }
+      ]
+    },
+    {
+      "title": "Верхний ряд",
+      "lessons": [
+        {
+          "id": "en-04",
+          "title": "Клавиши E I",
+          "newKeys": "EI",
+          "intro": "Новые клавиши: E — левый средний палец; I — правый средний палец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "ee eee ee eee ii iii ii iii ee eee ee eee ii iii ii iii",
+            "ek is je ji fe ia ej ie ik ih de es he li",
+            "jid ejd jih ele ike hes kej sea fil edl ikj",
+            "slide field fill kiss side she eggs egg he",
+            "egg he she slide side eggs field fill his",
+            "ek ek ek is is is je je je ji ji ji fe fe fe"
+          ],
+          "minCpm": 80,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-05",
+          "title": "Клавиши R U",
+          "newKeys": "RU",
+          "intro": "Новые клавиши: R — левый указательный палец; U — правый указательный палец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "rr rrr rr rrr uu uuu uu uuu rr rrr rr rrr uu uuu uu uuu",
+            "gu rh kr re sr ue ar uh rs ri ug ul uk ra",
+            "aju rer ris ule dua lul rii fuu arr juf gau",
+            "here user rude rider hear rid real fire are",
+            "are user fire rid hear real ruder here rude",
+            "gu gu gu rh rh rh kr kr kr re re re sr sr sr"
+          ],
+          "minCpm": 80,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-06",
+          "title": "Клавиши T Y",
+          "newKeys": "TY",
+          "intro": "Новые клавиши: T — левый указательный палец; Y — правый указательный палец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "tt ttt tt ttt yy yyy yy yyy tt ttt tt ttt yy yyy yy yyy",
+            "yg tu dy yr uy ry iy ty ta tl yf kt ky jy",
+            "yah yul ity fey yug eta tej tai dey let tea ita",
+            "first yet that true take father at tree light",
+            "first light at tire father yet that tree take",
+            "yg yg yg tu tu tu dy dy dy yr yr yr uy uy uy"
+          ],
+          "minCpm": 80,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-07",
+          "title": "Клавиши W O",
+          "newKeys": "WO",
+          "intro": "Новые клавиши: W — левый безымянный палец; O — правый безымянный палец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "ww www ww www oo ooo oo ooo ww www ww www oo ooo oo ooo",
+            "oy lo wj yw go yo oa gw wh io aw ot fo uw",
+            "goi gaw toh sio oyt soe ulw eho eto way ost",
+            "wolf house always should where world too do for",
+            "always those where do world too for wolf house",
+            "oy oy oy lo lo lo wj wj wj yw yw yw go go go"
+          ],
+          "minCpm": 80,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-08",
+          "title": "Клавиши Q P",
+          "newKeys": "QP",
+          "intro": "Новые клавиши: Q — левый мизинец; P — правый мизинец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "qq qqq qq qqq pp ppp pp ppp qq qqq qq qqq pp ppp pp ppp",
+            "gp qi qu pj tp sq qw rq fp qh yq pi ip dq",
+            "qai qeu qeg pey aqj aqs ipu quq pui yip awq pir",
+            "party put quiet pop quote quite stop please power",
+            "party quote quiet play quite stop please power put",
+            "gp gp gp qi qi qi qu qu qu pj pj pj tp tp tp"
+          ],
+          "minCpm": 80,
+          "minAccuracy": 95
+        }
+      ]
+    },
+    {
+      "title": "Нижний ряд",
+      "lessons": [
+        {
+          "id": "en-09",
+          "title": "Клавиши C M",
+          "newKeys": "CM",
+          "intro": "Новые клавиши: C — левый средний палец; M — правый указательный палец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "cc ccc cc ccc mm mmm mm mmm cc ccc cc ccc mm mmm mm mmm",
+            "co cw mg ck ch am km cp cm lc hm cu cq mh",
+            "lic ism imo acq cau ucr ahc emg cie juc cii cui",
+            "cloud which must music home come me family make",
+            "make home which me come form must cloud family",
+            "co co co cw cw cw mg mg mg ck ck ck ch ch ch"
+          ],
+          "minCpm": 80,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-10",
+          "title": "Клавиши V B",
+          "newKeys": "VB",
+          "intro": "Новые клавиши: V — левый указательный палец; B — левый указательный палец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "vv vvv vv vvv bb bbb bb bbb vv vvv vv vvv bb bbb bb bbb",
+            "bq qv vd vy cv yb vr sb bg mb kv yv ab lb",
+            "bee okb vub vig hev bav bah uhb ovt boq ivl jav",
+            "buy below but every boy five before view about",
+            "before boy below blue five about but buy view",
+            "bq bq bq qv qv qv vd vd vd vy vy vy cv cv cv"
+          ],
+          "minCpm": 80,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-11",
+          "title": "Клавиши N X",
+          "newKeys": "NX",
+          "intro": "Новые клавиши: N — правый указательный палец; X — левый безымянный палец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "nn nnn nn nnn xx xxx xx xxx nn nnn nn nnn xx xxx xx xxx",
+            "nr ix mn xk on wn nv nx qn xg pn xa cx nw",
+            "hex xoj imx xuj gen exy nay nom ixf xei ujx inu",
+            "think month open an learn often than thin different",
+            "often open than learn thin bring different think month",
+            "nr nr nr ix ix ix mn mn mn xk xk xk on on on"
+          ],
+          "minCpm": 90,
+          "minAccuracy": 96
+        },
+        {
+          "id": "en-12",
+          "title": "Клавиши Z",
+          "newKeys": "Z",
+          "intro": "Новые клавиши: Z — левый мизинец. Держите пальцы на домашнем ряду (ASDF JKL;), большие пальцы — над пробелом. Не смотрите на клавиатуру.",
+          "exercises": [
+            "zz zzz zz zzz zz zzz zz zzz zz zzz zz zzz",
+            "kz hz ze ez yz zw zy zg iz rz mz zi fz zp",
+            "ocz izt zag izo ifz ruz uzf afz zea zup zat azy",
+            "crazy size zone seize dozen quiz lazy zero zoo",
+            "quiz zoo zero zone zebra size crazy dozen lazy",
+            "kz kz kz hz hz hz ze ze ze ez ez ez yz yz yz"
+          ],
+          "minCpm": 90,
+          "minAccuracy": 96
+        }
+      ]
+    },
+    {
+      "title": "Заглавные буквы",
+      "lessons": [
+        {
+          "id": "en-13",
+          "title": "Заглавные: буквы левой руки",
+          "newKeys": "",
+          "intro": "Заглавные буквы левой руки печатаются с правым Shift: зажмите его правым мизинцем, нажмите букву левой рукой и отпустите оба пальца.",
+          "exercises": [
+            "Et Rw Dh Gp Fu To Wr Cb Xa Ac Zi Vr Sn Bx",
+            "Ahd Rbu Tuv Fdh Xxg Eyt Chz Gji Zjk Bhv Qvz Sik",
+            "Ask Glass Girl Feel Car Take Week Write Exact",
+            "Robert Vera Anna Emma Diana Tina Brian Edward",
+            "Arizona Seoul Vienna Amazon Toronto France Austin",
+            "Quite Carl Berlin Victor Victoria Should Georgia Fiona Tom Can"
+          ],
+          "minCpm": 90,
+          "minAccuracy": 96
+        },
+        {
+          "id": "en-14",
+          "title": "Заглавные: буквы правой руки",
+          "newKeys": "",
+          "intro": "Заглавные буквы правой руки печатаются с левым Shift: зажмите его левым мизинцем, нажмите букву правой рукой и отпустите оба пальца.",
+          "exercises": [
+            "Yw Py Mn Hk Ig Ny Lp Ji Oe Kw Uv",
+            "Yun Hjk Jjj Isv Lto Kwk Maf Ndt Unp Otj Pip",
+            "Main Place Let Me User Match People Must Hard",
+            "Julia Helen Jack Uma Laura Hannah Linda Pamela",
+            "Paris Nevada Kyiv Italy Ottawa Hawaii Madrid",
+            "Nice Moscow On Nina Peter Paul Kevin India Own Utah Move Ukraine"
+          ],
+          "minCpm": 90,
+          "minAccuracy": 96
+        }
+      ]
+    },
+    {
+      "title": "Цифры",
+      "lessons": [
+        {
+          "id": "en-15",
+          "title": "Цифры 4 5 6 7",
+          "newKeys": "4567",
+          "intro": "Цифры: 4 — левый указательный палец; 5 — левый указательный палец; 6 — правый указательный палец; 7 — правый указательный палец. После каждой цифры возвращайте палец на домашний ряд.",
+          "exercises": [
+            "44 444 44 444 55 555 55 555 66 666 66 666 77 777 77 777",
+            "76 74 47 54 75 56 67 46 57 64 45 65",
+            "4475 4646 7455 4776 4766 4767 5446 5574 7776 6477",
+            "5 walk 76 yet 7 spell 65 bit 65 order 55 idea 646 side",
+            "474 75 4645 577 65555 464 74 66767 4767 5557",
+            "vote 544 word 546 over 776 half 467 my 464 thing 657 until 667"
+          ],
+          "minCpm": 70,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-16",
+          "title": "Цифры 3 8",
+          "newKeys": "38",
+          "intro": "Цифры: 3 — левый средний палец; 8 — правый средний палец. После каждой цифры возвращайте палец на домашний ряд.",
+          "exercises": [
+            "33 333 33 333 88 888 88 888 33 333 33 333 88 888 88 888",
+            "43 86 85 34 73 84 48 78 63 36 35 83 53 37",
+            "5578 8654 6864 7487 7584 7753 5438 7768 8473 8835",
+            "3 seven 3 visit 884 walk 858 more 877 could 3 part 85 few",
+            "6777 43664 35865 76875 85866 3436 83 45 45574 7848",
+            "very 38 come 87 flasks 63 until 86 for 384 extra 375 exact 33"
+          ],
+          "minCpm": 70,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-17",
+          "title": "Цифры 2 9",
+          "newKeys": "29",
+          "intro": "Цифры: 2 — левый безымянный палец; 9 — правый безымянный палец. После каждой цифры возвращайте палец на домашний ряд.",
+          "exercises": [
+            "22 222 22 222 99 999 99 999 22 222 22 222 99 999 99 999",
+            "49 95 89 39 23 82 79 42 25 94 59 97 98 62",
+            "4522 6469 9755 9574 9968 4593 6995 3967 9223 4226",
+            "2 early 9 seize 9 keep 9 an 397 money 9 how 9 dads",
+            "79222 77622 833 62894 9347 572 4985 4975 256 4848",
+            "falls 94 fire 869 find 24 please 32 then 429 hear 39 them 26"
+          ],
+          "minCpm": 70,
+          "minAccuracy": 95
+        },
+        {
+          "id": "en-18",
+          "title": "Цифры 1 0",
+          "newKeys": "10",
+          "intro": "Цифры: 1 — левый мизинец; 0 — правый мизинец. После каждой цифры возвращайте палец на домашний ряд.",
+          "exercises": [
+            "11 111 11 111 00 000 00 000 11 111 11 111 00 000 00 000",
+            "60 18 03 21 01 70 20 13 31 05 90 71 51 12",
+            "1669 1395 7591 1335 1102 1698 1790 1316 1859 1546",
+            "000 one 14 come 607 tire 70 you 41 friend 1 must 503 shall",
+            "33 20057 18 49 77537 746 06884 72 43 54084",
+            "lie 18 ever 31 as 14 zebra 71 kiss 41 was 705 both 21"
+          ],
+          "minCpm": 70,
+          "minAccuracy": 95
+        }
+      ]
+    },
+    {
+      "title": "Знаки препинания",
+      "lessons": [
+        {
+          "id": "en-19",
+          "title": "Знаки: . , '",
+          "newKeys": ".,'",
+          "intro": "Знаки препинания: точка, запятая, апостроф. Знак ставится сразу за словом, без пробела перед ним. Для знаков на верхнем регистре держите Shift.",
+          "exercises": [
+            "eel. pot. cup. does. hard. bird. came. fire.",
+            "week, right, trust, begin, do, but, has, one,",
+            "they're we're that's there's isn't it's he's let's she's",
+            "sound, cut, power, six. well, for, six. before. which.",
+            "Typing without looking at the keys is a useful skill.",
+            "First comes accuracy, then comes speed, and finally comes rhythm."
+          ],
+          "minCpm": 80,
+          "minAccuracy": 96
+        },
+        {
+          "id": "en-20",
+          "title": "Знаки: ! ? : ;",
+          "newKeys": "!?:;",
+          "intro": "Знаки препинания: восклицательный знак, вопросительный знак, двоеточие, точка с запятой. Знак ставится сразу за словом, без пробела перед ним. Для знаков на верхнем регистре держите Shift.",
+          "exercises": [
+            "course! way! after! even! field! cat! line! user!",
+            "page? last? tree? money? tree? after? pretty? pen?",
+            "wish: young: own: salads: want: order: pit: hall:",
+            "brown; may; father; word; before; how; vote; old;",
+            "exam? yet; at: fire? she; cut: love! map; not:",
+            "Why do we practice? Because every habit starts with a small step.",
+            "Wait! Is it really 8 o'clock already?"
+          ],
+          "minCpm": 80,
+          "minAccuracy": 96
+        },
+        {
+          "id": "en-21",
+          "title": "Знаки: - ( ) \"",
+          "newKeys": "-()\"",
+          "intro": "Знаки препинания: дефис, скобки, кавычки. Знак ставится сразу за словом, без пробела перед ним. Для знаков на верхнем регистре держите Shift.",
+          "exercises": [
+            "part-page user-where story-then red-cut clean-ten mouth-flags",
+            "(ad) (user) (second) (money) (animal) (back) (wide) (eye)",
+            "\"stop\" \"write\" \"about\" \"often\" \"nice\" \"clear\" \"three\" \"me\"",
+            "\"very\" house-your \"take\" (cat) back-all happy-only (gal)",
+            "He said: \"Repeat the lesson every day!\"",
+            "Accuracy first, speed second (that is the rule)."
+          ],
+          "minCpm": 80,
+          "minAccuracy": 96
+        }
+      ]
+    },
+    {
+      "title": "Тексты",
+      "lessons": [
+        {
+          "id": "en-22",
+          "title": "Предложения",
+          "newKeys": "",
+          "intro": "Печатайте ровно и без спешки. Следите за точностью: скорость придёт сама.",
+          "exercises": [
+            "Slow is smooth, and smooth is fast.",
+            "Wait! Is it really 8 o'clock already?",
+            "Where there is a will, there is a way.",
+            "She sells sea shells by the sea shore.",
+            "He said: \"Repeat the lesson every day!\"",
+            "We bought 3 apples, 2 pears, and 10 plums."
+          ],
+          "minCpm": 110,
+          "minAccuracy": 97
+        },
+        {
+          "id": "en-23",
+          "title": "Фразы подряд",
+          "newKeys": "",
+          "intro": "Печатайте ровно и без спешки. Следите за точностью: скорость придёт сама.",
+          "exercises": [
+            "Practice makes perfect, so type a little every day. Where there is a will, there is a way.",
+            "Keep your fingers on the home row, and look at the screen. In 2026, we learned many new words and phrases.",
+            "Typing without looking at the keys is a useful skill. Look at the screen, not at the keys: your fingers already know the way.",
+            "The summer was hot, but the autumn was rainy and long. Accuracy first, speed second (that is the rule).",
+            "Why do we practice? Because every habit starts with a small step. He said: \"Repeat the lesson every day!\""
+          ],
+          "minCpm": 130,
+          "minAccuracy": 97
+        },
+        {
+          "id": "en-24",
+          "title": "Длинные тексты",
+          "newKeys": "",
+          "intro": "Печатайте ровно и без спешки. Следите за точностью: скорость придёт сама.",
+          "exercises": [
+            "Don't be afraid of mistakes: they help you learn. The quick brown fox jumps over the lazy dog. Where there is a will, there is a way.",
+            "He said: \"Repeat the lesson every day!\" Wait! Is it really 8 o'clock already? My friend lives in a big house by the lake.",
+            "Practice makes perfect, so type a little every day. Keep your fingers on the home row, and look at the screen. We bought 3 apples, 2 pears, and 10 plums.",
+            "In 2026, we learned many new words and phrases. The summer was hot, but the autumn was rainy and long. First comes accuracy, then comes speed, and finally comes rhythm."
+          ],
+          "minCpm": 150,
+          "minAccuracy": 97
+        }
+      ]
+    }
+  ]
+}
